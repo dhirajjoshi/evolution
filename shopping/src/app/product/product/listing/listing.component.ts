@@ -8,6 +8,6 @@ import { Component, Input } from '@angular/core';
 export class ListingComponent {
 
   constructor() { }
-@Input()product!:{name:'',quan:'',color:'',desc:'',rate:''}
+@Input()product=[]
 
 }

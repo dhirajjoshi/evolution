@@ -44,6 +44,7 @@ export class ProductComponent{
     static:false
   })productDescription!:ElementRef
 product=[]
+temp={}
   data(){
     // this.name=this.productName.nativeElement.value
     // this.quan=this.productQuantity.nativeElement.value
@@ -60,13 +61,13 @@ product=[]
     // this.product.desc=this.productDescription.nativeElement.value
     // this.product.rate=this.productRate.nativeElement.value
 
-    let temp={
+    this.temp={
       'name':this.productName.nativeElement.value,
       'quan':this.productQuantity.nativeElement.value,
       'color':this.productColor.nativeElement.value,
       'desc':this.productDescription.nativeElement.value,
       'rate':this.productRate.nativeElement.value
     }
-    this.product.push(temp)
+    this.product.push(this.temp)
   }
 }
