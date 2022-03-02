@@ -1,25 +1,58 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, ViewChild} from '@angular/core';
+interface Product{
+  name:string,
+  quan:number,
+  color:string,
+  lot:number,
+  desc:string,
+  rate:number}
 
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.css']
 })
-export class ProductComponent implements OnInit {
-  n :string=''
-  constructor() { }
+export class ProductComponent implements Product{
+  public name: string;
+  public quan: number;
+  public color: string;
+  public lot: number;
+  public desc: string;
+  public rate: number;
 
-  ngOnInit() {
+  @ViewChild('rate',{
+    static:false
+  })productRate!:ElementRef
+
+  @ViewChild('name',{
+    static:false
+  })productName!:ElementRef
+
+  @ViewChild('quan',{
+    static:false
+  })productQuantity!:ElementRef
+  
+  @ViewChild('color',{
+    static:false
+  })productColor!:ElementRef
+
+  @ViewChild('lot',{
+    static:false
+  })productLot!:ElementRef
+
+  @ViewChild('desc',{
+    static:false
+  })productDescription!:ElementRef
+//product={name:'',quan:'',color:'',lot:'',desc:'',rate:''}
+  data(event:Event){
+    this.name=this.productName.nativeElement.value
+    this.quan=this.productQuantity.nativeElement.value
+    this.color=this.productColor.nativeElement.value
+    this.lot=this.productLot.nativeElement.value
+    this.desc=this.productDescription.nativeElement.value
+    this.rate=this.productRate.nativeElement.value
+    //this.product.name=this.productName.nativeElement.value
   }
   
- data(data){
-   for (let i = 0; i < data.length; i++) {
-    this.n=data[1];
-    console.log(this.n);
-   }
-   this.n=data;
-   console.log(this.n);
-   
- } 
   
 }

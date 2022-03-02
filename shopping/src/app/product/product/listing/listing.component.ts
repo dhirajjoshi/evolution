@@ -1,19 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-listing',
   templateUrl: './listing.component.html',
   styleUrls: ['./listing.component.css']
 })
-export class ListingComponent implements OnInit {
+export class ListingComponent {
 
   constructor() { }
+@Input()product!:{name:'',quan:'',color:'',lot:'',desc:'',rate:''}
 
-  ngOnInit() {
-  }
-  nameRow=document.getElementById('name')  
-  description=document.getElementById('description');
-  color=document.getElementById('color');
-  quentity=document.getElementById('quentity');
-  rate=document.getElementById('rate');
 }

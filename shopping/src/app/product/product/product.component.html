@@ -17,20 +17,16 @@
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-6">
-                            <label for="id" id='id'>Product Id</label>
-                            <input type="text" name="id" required>
-                        </div>
-                        <div class="col-6">
                             <label for="name">Product Name</label>
                             <input type="text" id='name' name="name" #name required>
                         </div>
                         <div class="col-6">
                             <label for="rate">Product Rate</label>
-                            <input type="text" id='rate' name="rate" #rate required>
+                            <input type="number" id='rate' name="rate" minlength="0" maxlength="256" #rate required>
                         </div>
                         <div class="col-6">
                             <label for="quantity">Product Quantity</label>
-                            <input type="text" id='quentity' name="quantity" #quan required>
+                            <input type="number" id='quentity' minlength="1" maxlength="999" name="quantity" #quan required>
                         </div>
                         <div class="col-6">
                             <label for="color">Product Color</label>
@@ -38,17 +34,17 @@
                         </div>
                         <div class="col-6">
                             <label for="lot">Product Purchase Lot Size</label>
-                            <input type="text" id='lot' name="lot" #lot required>
+                            <input type="number" id='lot' name="lot" #lot required>
                         </div>
                         <div class="col-6">
                             <label for="desc">Product Description</label>
-                            <input type="text" id='description' name="desc" #desc required>
+                            <input type="text" id='description' name="desc" maxlength="512" #desc required>
                         </div>
                     </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" (click)="data(name.value) || data(rate.value)">Save changes</button>
+                    <button type="button" class="btn btn-primary" (click)='data($event)'>Save changes</button>
                 </div>
             </div>
         </div>
