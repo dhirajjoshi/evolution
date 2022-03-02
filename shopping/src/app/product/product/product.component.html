@@ -44,10 +44,31 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" (click)='data($event)'>Save changes</button>
+                    <button type="button" class="btn btn-primary" (click)='data()'>Save changes</button>
                 </div>
             </div>
         </div>
     </div>
 </form>
-<app-listing></app-listing>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Product name</th>
+            <th scope="col">Product Description</th>
+            <th scope="col">Product Color</th>
+            <th scope="col">Product Quentity</th>
+            <th scope="col">Product Rate</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let i of product">
+            <td scope="col">{{i.name}}</td>
+            <td scope="col"> {{i.desc}}</td>
+            <td scope="col">{{i.color}}</td>
+            <td scope="col">{{i.quan}}</td>
+            <td scope="col">{{i.rate}}</td>
+        </tr>
+    </tbody>
+</table>
+<!-- <app-listing></app-listing> -->
