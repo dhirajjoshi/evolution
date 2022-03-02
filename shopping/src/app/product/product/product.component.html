@@ -1,0 +1,57 @@
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal">
+    Launch demo modal
+  </button>
+
+<!-- Modal -->
+<form id="data">
+    <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-6">
+                            <label for="id" id='id'>Product Id</label>
+                            <input type="text" name="id" required>
+                        </div>
+                        <div class="col-6">
+                            <label for="name">Product Name</label>
+                            <input type="text" id='name' name="name" #name required>
+                        </div>
+                        <div class="col-6">
+                            <label for="rate">Product Rate</label>
+                            <input type="text" id='rate' name="rate" #rate required>
+                        </div>
+                        <div class="col-6">
+                            <label for="quantity">Product Quantity</label>
+                            <input type="text" id='quentity' name="quantity" #quan required>
+                        </div>
+                        <div class="col-6">
+                            <label for="color">Product Color</label>
+                            <input type="text" id='color' name="color" #color required>
+                        </div>
+                        <div class="col-6">
+                            <label for="lot">Product Purchase Lot Size</label>
+                            <input type="text" id='lot' name="lot" #lot required>
+                        </div>
+                        <div class="col-6">
+                            <label for="desc">Product Description</label>
+                            <input type="text" id='description' name="desc" #desc required>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" (click)="data(name.value) || data(rate.value)">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+<app-listing></app-listing>
