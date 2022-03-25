@@ -1,5 +1,4 @@
 import { Component, Input } from '@angular/core';
-
 @Component({
   selector: 'app-listing',
   templateUrl: './listing.component.html',
@@ -9,6 +8,7 @@ export class ListingComponent {
 
   constructor() { }
 @Input()product=[]
+
 col(q){
   if(q==0){
     return {'background-color':'#ff0000','color':'#FFFFFF'}

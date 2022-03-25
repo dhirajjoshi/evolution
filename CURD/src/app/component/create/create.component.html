@@ -1,0 +1,34 @@
+<div class="card" style="width: 18rem; margin: 10px">
+    <div class="card-body">
+        <form [formGroup]="notesFormGroup" id="createForm">
+            <label>Title</label>
+            <br>
+            <input type="text" id="title" class="form-control" formControlName="title" placeholder="Title">
+            <div *ngIf="_notesForm['title']?.errors && _notesForm['title'].touched || formSubmitted">
+                <div style="color: red;">
+                    <span *ngIf="_notesForm['title']?.errors?.['required']">Title is required</span>
+                    <span *ngIf="_notesForm['title']?.errors?.['maxlength']">MaxLength is 100</span>
+                </div>
+            </div>
+            <br>
+            <label>Description</label>
+            <textarea class="form-control" id="description" rows="3" formControlName="description" placeholder="Description"></textarea>
+            <!-- <input type="text" id="description" formControlName="description" placeholder="Description"> -->
+            <div *ngIf="_notesForm['description']?.errors && _notesForm['description'].touched || formSubmitted">
+                <div style="color: red;">
+                    <span *ngIf="_notesForm['description']?.errors?.['maxlength']">MaxLength is 1000</span>
+                    <span *ngIf="_notesForm['description']?.errors?.['required']">Description is required</span>
+                </div>
+            </div>
+            <br>
+            <input type="checkbox" id="status" class="form-check-input" style="margin-left: 10px;" formControlName="status">
+            <label class="form-check-label" for="status" style="margin-left: 25px;">
+                Status
+              </label>
+            <br>
+            <button type="button" class="btn btn-primary" (click)="onAdd()">{{_editValueId?"Edit":"Add"}}</button><br>
+            <button type="button" class="btn btn-primary" style="margin-top: 10px;" (click)="clean()">Clear</button>
+        </form>
+    </div>
+</div>
+<app-display [notes]="notes" (editValue)="edit($event)"></app-display>
